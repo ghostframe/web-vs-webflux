@@ -1,11 +1,12 @@
 # Web vs Webflux stress tests
 
-Este proyecto busca comparar diferentes implementaciones de este escenario: ![](diagram.png)
+Este proyecto busca comparar diferentes implementaciones de un servidor que consume una API HTTP externa (gateway): 
 - Spring Web 
 - Spring Webflux con un cliente no bloqueante (WebClient)
 - Spring Webflux con un cliente bloqueante (RestTemplate)
+![](diagram.png)
 
-Con los valores de ejemplo, se estresa la aplicación con 200 requests simultáneas y el API externa tarda 2 segundos. Podés cambiar los números y ver que pasa :D
+Con los valores de ejemplo, se estresa la aplicación con 200 requests simultáneas y la API externa tarda 2 segundos. Podés cambiar los números y ver qué pasa :D
 
 ## Cómo correr las pruebas
 1. Abrí esta carpeta con IntelliJ IDEA
@@ -19,6 +20,6 @@ Con los valores de ejemplo, se estresa la aplicación con 200 requests simultán
 5. Cada "Aggregate Report" indica los resultados. Se ve algo así:
    ![](como-leer-resultados-jmeter.png)
    
-Para cambiar la cantidad de usuarios o el tiempo de ramp up configurar cada Thread Group (cada engranaje en JMeter)
+Para cambiar la cantidad de peticiones que se hacen en la prueba, configurar cada Thread Group (cada engranaje en JMeter)
 
 Para cambiar el tiempo de tardanza de el servicio "externo", cambiar el tiempo del Thread.sleep en la clase principal de [slow-api](slow-api/src/main/kotlin/com/example/slowapi/SlowApiApplication.kt)

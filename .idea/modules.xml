@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/slow-api/slow-api.iml" filepath="$PROJECT_DIR$/slow-api/slow-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-server/web-server.iml" filepath="$PROJECT_DIR$/web-server/web-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-vs-webflux.iml" filepath="$PROJECT_DIR$/web-vs-webflux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webflux-server/webflux-server.iml" filepath="$PROJECT_DIR$/webflux-server/webflux-server.iml" />
+    </modules>
+  </component>
+</project>

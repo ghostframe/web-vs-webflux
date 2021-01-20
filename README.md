@@ -1,6 +1,6 @@
 # Web vs Webflux stress tests
 
-Este proyecto busca comparar diferentes implementaciones de [este escenario](diagram.png): 
+Este proyecto busca comparar diferentes implementaciones de este escenario: ![](diagram.png)
 - Spring Web 
 - Spring Webflux con un cliente no bloqueante (WebClient)
 - Spring Webflux con un cliente bloqueante (RestTemplate)

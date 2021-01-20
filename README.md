@@ -18,3 +18,7 @@ Con los valores de ejemplo, se estresa la aplicación con 200 requests simultán
 4. Poné play, poné play te dije!!!!!
 5. Cada "Aggregate Report" indica los resultados. Se ve algo así:
    ![](como-leer-resultados-jmeter.png)
+   
+Para cambiar la cantidad de usuarios o el tiempo de ramp up configurar cada Thread Group (cada engranaje en JMeter)
+
+Para cambiar el tiempo de tardanza de el servicio "externo", cambiar el tiempo del Thread.sleep en la clase principal de [slow-api](slow-api/src/main/kotlin/com/example/slowapi/SlowApiApplication.kt)

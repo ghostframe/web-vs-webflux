@@ -16,4 +16,5 @@ Con los valores de ejemplo, se estresa la aplicación con 200 requests simultán
     
 3. Corré un JMeter y abrí el plan de pruebas en `jmeter-tests/alltests.jmx`. Si no tenés JMeter descargalo de [acá](https://apache.dattatec.com//jmeter/binaries/apache-jmeter-5.4.zip).
 4. Poné play, poné play te dije!!!!!
-5. Cada "Aggregate Report" indica los resultados.
+5. Cada "Aggregate Report" indica los resultados. Se ve algo así:
+   ![](como-leer-resultados-jmeter.png)

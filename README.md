@@ -23,3 +23,7 @@ Con los valores de ejemplo, se estresa la aplicación con 200 requests simultán
 Para cambiar la cantidad de peticiones que se hacen en la prueba, configurar cada Thread Group (cada engranaje en JMeter)
 
 Para cambiar el tiempo de tardanza de el servicio "externo", cambiar el tiempo del Thread.sleep en la clase principal de [slow-api](slow-api/src/main/kotlin/com/example/slowapi/SlowApiApplication.kt)
+
+## Algunos resultados
+![](200req-2seg-12cores.png)
+(OkHttp3 y RestTemplate se comportan muy parecido)

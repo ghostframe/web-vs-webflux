@@ -1,13 +1,12 @@
 package com.example.webfluxserver
 
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.client.RestTemplate
 import org.springframework.web.reactive.function.client.WebClient
-import reactor.core.publisher.Mono
 
 @SpringBootApplication
 class WebfluxServerApplication
@@ -27,8 +26,14 @@ class ControllerNoBloqueante (private val webClient: WebClient = WebClient.creat
 }
 
 @RestController
-class ControllerBloqueante (private val restTemplate: RestTemplate = RestTemplate()){
+class ControllerBloqueante (private val okHttp: OkHttpClient = OkHttpClient()){
 
 	@GetMapping("/bloqueante")
-	fun saludar() = restTemplate.getForObject("http://localhost:9000", String::class.java)
+	fun saludar(): String {
+		val request: Request = Request.Builder()
+			.url("http://localhost:9000")
+			.build()
+
+		return okHttp.newCall(request).execute().use { response -> response.body?.string()!! }
+	}
 }

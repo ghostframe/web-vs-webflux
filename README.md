@@ -26,4 +26,4 @@ Para cambiar el tiempo de tardanza de el servicio "externo", cambiar el tiempo d
 
 ## Algunos resultados
 ![](200req-2seg-12cores.png)
-(OkHttp3 y RestTemplate se comportan muy parecido)
+(OkHttp3 y RestTemplate se comportan muy parecido). Los 200 requests se disparan en simultáneo

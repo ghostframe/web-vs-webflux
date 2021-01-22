@@ -9,13 +9,9 @@ Este proyecto busca comparar diferentes implementaciones de un servidor que cons
 Con los valores de ejemplo, se estresa la aplicación con 200 requests simultáneas y la API externa tarda 2 segundos. Podés cambiar los números y ver qué pasa :D
 
 ## Cómo correr las pruebas (Gatling)
-1. Abrí esta carpeta con IntelliJ IDEA
-2. Corré las aplicaciones (los links te llevan a cada clase main)
-   - La API "externa" lenta: [slow-api](slow-api/src/main/kotlin/com/example/slowapi/SlowApiApplication.kt)
-   - El servidor Spring Web:  [web-server](web-server/src/main/kotlin/com/example/webserver/WebServerApplication.kt)
-   - El servidor Spring WebFlux:  [webflux-server](webflux-server/src/main/kotlin/com/example/webfluxserver/WebfluxServerApplication.kt)
-3. Ejecutá `gatling-tests/test.sh`. Indicá la cantidad de usuarios.
-4. Se abrirán en el navegador los resultados 
+1. Corré `gatling-tests/start-apis.bat`
+2. Ejecutá `gatling-tests/test.sh`. Indicá la cantidad de usuarios.
+3. Se abrirán en el navegador los resultados 
 
 ## Cómo correr las pruebas (JMeter)
 1. Abrí esta carpeta con IntelliJ IDEA

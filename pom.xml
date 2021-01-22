@@ -16,6 +16,7 @@
 	<modules>
 		<module>slow-api</module>
 		<module>webflux-server</module>
+		<module>gatling-tests</module>
 		<module>web-server</module>
 	</modules>
 </project>

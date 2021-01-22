@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gatling-tests" />
         <module name="slow-api" />
         <module name="web-server" />
         <module name="webflux-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gatling-tests" target="1.8" />
       <module name="slow-api" target="11" />
       <module name="web-server" target="11" />
       <module name="web-vs-webflux" target="1.8" />

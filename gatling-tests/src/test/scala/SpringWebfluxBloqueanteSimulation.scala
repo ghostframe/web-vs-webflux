@@ -1,5 +1,4 @@
-import Config.users
-import Config.apiDelay
+import Config.{apiDelay, users}
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 

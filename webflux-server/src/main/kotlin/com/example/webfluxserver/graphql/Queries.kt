@@ -14,18 +14,18 @@ class Queries(
     private val okHttp: OkHttpClient = OkHttpClient()
 ) : Query {
 
-    fun bloqueante(): String {
+    fun bloqueante(responseDelay: Long?): String {
         val request: Request = Request.Builder()
-            .url("http://localhost:9000")
+            .url("http://localhost:9000?responseDelay=${responseDelay?:2000}")
             .build()
 
         return okHttp.newCall(request).execute().use { response -> response.body?.string()!! }
     }
 
-    fun noBloqueante(): CompletableFuture<String> {
+    fun noBloqueante(responseDelay: Long?): CompletableFuture<String> {
         return webClient
             .get()
-            .uri("http://localhost:9000")
+            .uri("http://localhost:9000?responseDelay=${responseDelay?:2000}")
             .exchangeToMono { it.bodyToMono(String::class.java) }
             .toFuture()
     }

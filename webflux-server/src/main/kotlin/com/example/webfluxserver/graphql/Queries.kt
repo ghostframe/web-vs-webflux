@@ -4,9 +4,7 @@ import com.expediagroup.graphql.spring.operations.Query
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.springframework.stereotype.Component
-import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.reactive.function.client.WebClient
-import reactor.core.publisher.Mono
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Future
 
@@ -24,7 +22,7 @@ class Queries(
         return okHttp.newCall(request).execute().use { response -> response.body?.string()!! }
     }
 
-    fun noBloqueante(): Future<String> {
+    fun noBloqueante(): CompletableFuture<String> {
         return webClient
             .get()
             .uri("http://localhost:9000")

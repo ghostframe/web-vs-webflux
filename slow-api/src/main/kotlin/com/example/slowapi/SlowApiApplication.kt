@@ -3,6 +3,7 @@ package com.example.slowapi
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
@@ -15,8 +16,8 @@ fun main(args: Array<String>) {
 @RestController
 class Controller {
 	@GetMapping
-	fun saludar(): String {
-		Thread.sleep(2000)
+	fun saludar(@RequestParam(name = "responseDelay", required = false) responseDelay: Long?): String {
+		Thread.sleep(responseDelay ?: 2000)
 		return "Hola!!!"
 	}
 }
